@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="action_process_travel_advance">
+        <field name="name">Travel Advance</field>
+        <field name="res_model">travel_advance.process</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="action_process_staff_advance">
+        <field name="name">Cash Advance</field>
+        <field name="res_model">advance_request.ebs</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+        <record model="ir.actions.act_window" id="action_process_voucher_type">
+        <field name="name">Voucher Types</field>
+        <field name="res_model">voucher_type.ebs</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    </data>
+</odoo>
