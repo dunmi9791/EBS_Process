@@ -11,11 +11,18 @@
         <field name="res_model">advance_request.ebs</field>
         <field name="view_mode">tree,form</field>
     </record>
-        <record model="ir.actions.act_window" id="action_process_voucher_type">
-        <field name="name">Voucher Types</field>
-        <field name="res_model">voucher_type.ebs</field>
-        <field name="view_mode">tree,form</field>
+        <record id="ebs_process_dashboard" model="ir.actions.act_window">
+        <field name="name">Dashboard</field>
+        <field name="res_model">board.board</field>
+        <field name="view_mode">form</field>
+        <field name="usage">menu</field>
+        <field name="view_id" ref="dashboard_form_view"/>
     </record>
+<!--        <record model="ir.actions.act_window" id="action_process_voucher_type">-->
+<!--        <field name="name">Voucher Types</field>-->
+<!--        <field name="res_model">voucher_type.ebs</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
 
 
     </data>

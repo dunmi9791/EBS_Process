@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_ebs_process_ebs_process,ebs_process.ebs_process,model_ebs_process_ebs_process,,1,0,0,0
+access_nbet_process,nbet.process,model_travel_advance_process,,1,1,1,0
+access_nbet_process2,nbet.process2,model_travel_details,,1,1,1,0
+access_nbet_process3,nbet.process3,model_advance_details_ebs,,1,1,1,0
+access_nbet_process4,nbet.process4,model_advance_request_ebs,,1,1,1,0

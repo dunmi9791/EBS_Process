@@ -2,17 +2,24 @@
 <odoo>
     <data>
         <menuitem name="EBS Processes" id="process_root_menu" web_icon="ebs_process,static/src/img/icon.png"/>
-        <menuitem name="General" id="process_general_menu" parent="process_root_menu"
+        <menuitem name="Request Forms" id="process_general_menu" parent="process_root_menu"
               sequence="3" />
         <menuitem name="Travel Advance" id="process_travel_advance_menu" parent="process_general_menu"
               sequence="6" action="action_process_travel_advance"/>
         <menuitem name="Cash Advance" id="process_staff_advance_menu" parent="process_general_menu"
               sequence="7" action="action_process_staff_advance"/>
+        <menuitem
+        name="Overview"
+        parent="process_root_menu"
+        action="board.open_board_my_dash_action"
+        sequence="1"
+        id="menu_dashboard"/>
 
-        <menuitem name="Settings" id="process_settings_menu" parent="process_root_menu"
-              sequence="5" />
-    <menuitem name="Voucher Types" id="process_voucher_type_menu" parent="process_settings_menu"
-              sequence="2" action="action_process_voucher_type"/>
+
+<!--        <menuitem name="Settings" id="process_settings_menu" parent="process_root_menu"-->
+<!--              sequence="5" />-->
+<!--    <menuitem name="Voucher Types" id="process_voucher_type_menu" parent="process_settings_menu"-->
+<!--              sequence="2" action="action_process_voucher_type"/>-->
 
 
 
