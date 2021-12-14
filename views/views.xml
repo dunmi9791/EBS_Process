@@ -24,12 +24,12 @@
             <form string="Travel Advance Request" duplicate="0">
                 <header>
                     <button name="travel_advance_request" type="object" string="Request Travel Advance" class="oe_highlight" states="draft" />
-                    <button name="travel_advance_approve" type="object" string="Approve travel advance" class="oe_highlight"  states="Requested" groups="nbet.hod_group"/>
-                    <button name="travel_advance_fin_approve" type="object" string="Financial Approval" class="oe_highlight" states="HOD Approve" groups="nbet.chief_financial_group"/>
-                    <button name="travel_advance_reject" type="object" string="Reject Request" class="oe_highlight" states="Requested" groups="nbet.hod_group"/>
-                    <button name="travel2_advance_reject" type="object" string="Reject Request" class="oe_highlight" states="HOD Approve" groups="nbet.chief_financial_group"/>
+                    <button name="travel_advance_approve" type="object" string="Approve travel advance" class="oe_highlight"  states="Requested" groups="ebs_process.hod_group"/>
+                    <button name="travel_advance_fin_approve" type="object" string="Financial Approval" class="oe_highlight" states="HOD Approve" groups="ebs_process.chief_financial_group"/>
+                    <button name="travel_advance_reject" type="object" string="Reject Request" class="oe_highlight" states="Requested" groups="ebs_process.hod_group"/>
+                    <button name="travel2_advance_reject" type="object" string="Reject Request" class="oe_highlight" states="HOD Approve" groups="ebs_process.chief_financial_group"/>
 
-                    <button name="process" string="Process" class="oe_highlight" states="Fin Approve"  type="object" groups="nbet.cash_accountant_group"/>
+                    <button name="process" string="Process" class="oe_highlight" states="Fin Approve"  type="object" groups="ebs_process.cash_accountant_group"/>
 
                 <field name="state" widget="statusbar" statusbar_visible="draft,Requested,Approved,Rejected"/>
                 </header>
@@ -97,17 +97,17 @@
             <form string="Cash Advance Request" >
                 <header>
                     <button name="staff_advance_request" type="object" string="Request Cash Advance" class="oe_highlight" states="draft"/>
-                    <button name="staff_advance_hod_approve" type="object" string="Cash advance HOD Approve" class="oe_highlight" groups="nbet.hod_group" states="Requested"/>
-                    <button name="staff_advance_fc_approve" type="object" string="FC Approval" class="oe_highlight" groups="nbet.financial_controller_group" states="HOD Approve"/>
-                    <button name="staff_advance_cfo_approve" type="object" string="CFO Approval" class="oe_highlight" groups="nbet.chief_financial_group" states="FC Approve"/>
-                    <button name="staff_advance_ceo_approve" type="object" string="CEO Approval" class="oe_highlight" groups= "nbet.chief_executive_group" states="CFO Approve"/>
-                    <button name="staff_advance_cfo_forward" type="object" string="CFO Forward" class="oe_highlight"  groups="nbet.chief_financial_group" states="CEO Approve"/>
+                    <button name="staff_advance_hod_approve" type="object" string="Cash advance HOD Approve" class="oe_highlight" groups="ebs_process.hod_group" states="Requested"/>
+                    <button name="staff_advance_fc_approve" type="object" string="FC Approval" class="oe_highlight" groups="ebs_process.financial_controller_group" states="HOD Approve"/>
+                    <button name="staff_advance_cfo_approve" type="object" string="CFO Approval" class="oe_highlight" groups="ebs_process.chief_financial_group" states="FC Approve"/>
+                    <button name="staff_advance_ceo_approve" type="object" string="CEO Approval" class="oe_highlight" groups= "ebs_process.chief_executive_group" states="CFO Approve"/>
+                    <button name="staff_advance_cfo_forward" type="object" string="CFO Forward" class="oe_highlight"  groups="ebs_process.chief_financial_group" states="CEO Approve"/>
                     <button name="staff_advance_input_details" type="object" string="Input Details" class="oe_highlight"  states="CFO Forward"/>
                     <button name="staff_advance_review_details" type="object" string="Confirm Details" class="oe_highlight" states="Input Details"/>
-                    <button name="staff_advance_reject" type="object" string="Reject Request" class="oe_highlight" groups="nbet.hod_group" states="Requested" />
-                    <button name="staff2_advance_reject" type="object" string="Reject Request" class="oe_highlight" groups="nbet.financial_controller_group" states="HOD Approve" />
-                    <button name="staff3_advance_reject" type="object" string="Reject Request" class="oe_highlight" groups="nbet.chief_financial_group" states="FC Approve" />
-                    <button name="staff4_advance_reject" type="object" string="Reject Request" class="oe_highlight" groups= "nbet.chief_executive_group" states="CFO Approve" />
+                    <button name="staff_advance_reject" type="object" string="Reject Request" class="oe_highlight" groups="ebs_process.hod_group" states="Requested" />
+                    <button name="staff2_advance_reject" type="object" string="Reject Request" class="oe_highlight" groups="ebs_process.financial_controller_group" states="HOD Approve" />
+                    <button name="staff3_advance_reject" type="object" string="Reject Request" class="oe_highlight" groups="ebs_process.chief_financial_group" states="FC Approve" />
+                    <button name="staff4_advance_reject" type="object" string="Reject Request" class="oe_highlight" groups= "ebs_process.chief_executive_group" states="CFO Approve" />
                     <button name="staff5_advance_reject" type="object" string="Reject Request" class="oe_highlight" states="CEO Approve" />
 
                     <button name="process" string="Process" class="oe_highlight" states="Review Details"  type="object"/>
