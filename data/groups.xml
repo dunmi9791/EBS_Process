@@ -6,7 +6,7 @@
     <record id="financial_accountant_group" model="res.groups">
         <field name="name">financial accountant</field>
         <field name="comment">Financial Accountant Permission Group.</field>
-        <field name="category_id" ref="nbet.module_category_nbet"/>
+        <field name="category_id" ref="ebs_process.module_category_nbet"/>
     </record>
     <record id="cash_accountant_group" model="res.groups">
         <field name="name">cash accountant</field>
