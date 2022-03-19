@@ -195,6 +195,7 @@ class AdvanceRequest(models.Model):
                    ('CFOApprove', 'CEO Approve'),
                    ('CEO Approve', 'CFOForward'),
                    ('CFOForward', 'Input Details'),
+                   ('CFOForward', 'CEO Approve'),
                    ('Input Details', 'Review Details'),
                    ('Review Details', 'process'),
                    ('FC Approved', 'Rejected'),
