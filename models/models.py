@@ -228,7 +228,11 @@ class AdvanceRequest(models.Model):
 
     @api.multi
     def staff_advance_cfo_approve(self):
-        self.change_state('CFO Approve')
+        if self.amount_total > self._uid.partner_id.id.advance_limit:
+            msg = _('The Cash advance amount is above your approval limit')
+            raise UserError(msg)
+        else:
+            self.change_state('CFO Approve')
 
     @api.multi
     def staff_advance_input_details(self):
@@ -275,6 +279,11 @@ class AdvanceDetails(models.Model):
     amount = fields.Float(string="Amount",  required=False, )
     advance_request_id = fields.Many2one(comodel_name="advance_request.ebs", string="", required=False, )
 
+
+class ResPartner(models.Model):
+    _inherit = 'res.partner'
+
+    advance_limit = fields.Monetary('Advance approval limit',)
 
 # class ebs_process(models.Model):
 #     _name = 'ebs_process.ebs_process'
