@@ -165,6 +165,7 @@ class AdvanceRequest(models.Model):
     company_id = fields.Many2one('res.company', string='', required=True, readonly=True,
                                  default=lambda self: self.env.user.company_id)
     currency_id = fields.Many2one('res.currency', compute='_compute_currency', store=True, string="Currency")
+    current_user = fields.Many2one('res.users', 'Current User', default=lambda self: self.env.user)
 
     @api.one
     @api.depends('company_id')
@@ -228,7 +229,7 @@ class AdvanceRequest(models.Model):
 
     @api.multi
     def staff_advance_cfo_approve(self):
-        if self.amount_total > self._uid.id.partner_id.id.advance_limit:
+        if self.amount_total > self.current_user.partner_id.advance_limit:
             msg = _('The Cash advance amount is above your approval limit')
             raise UserError(msg)
         else:
