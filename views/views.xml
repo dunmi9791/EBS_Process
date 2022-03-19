@@ -101,7 +101,7 @@
                     <button name="staff_advance_fc_approve" type="object" string="FC Approval" class="oe_highlight" groups="EBS_Process.financial_controller_group" states="HOD Approve"/>
                     <button name="staff_advance_cfo_approve" type="object" string="CFO Approval" class="oe_highlight" groups="EBS_Process.chief_financial_group" states="FC Approve"/>
                     <button name="request_ceo_approval" type="object" string="Request CEO Approval" class="oe_highlight" groups="EBS_Process.chief_financial_group" states="FC Approve"/>
-                    <button name="staff_advance_ceo_approve" type="object" string="CEO Approval" class="oe_highlight" groups= "EBS_Process.chief_executive_group" states="CFO Approve, CFO Forward"/>
+                    <button name="staff_advance_ceo_approve" type="object" string="CEO Approval" class="oe_highlight" groups= "EBS_Process.chief_executive_group" states="CFO Approve,CFO Forward"/>
                     <button name="staff_advance_cfo_forward" type="object" string="CFO Forward" class="oe_highlight"  groups="EBS_Process.chief_financial_group" states="CEO Approve"/>
                     <button name="staff_advance_input_details" type="object" string="Input Details" class="oe_highlight"  states="CFO Forward"/>
                     <button name="staff_advance_review_details" type="object" string="Confirm Details" class="oe_highlight" states="Input Details"/>
