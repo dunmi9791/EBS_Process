@@ -198,6 +198,7 @@ class AdvanceRequest(models.Model):
                    ('Input Details', 'Review Details'),
                    ('Review Details', 'process'),
                    ('FC Approved', 'Rejected'),
+                   ('FC Approved', 'CFO Forward'),
                    ('CFO Approved', 'Rejected'),
                    ]
         return (old_state, new_state) in allowed
@@ -234,6 +235,10 @@ class AdvanceRequest(models.Model):
             raise UserError(msg)
         else:
             self.change_state('CFO Approve')
+
+    @api.multi
+    def request_ceo_approval(self):
+        self.change_state('CFO Forward')
 
     @api.multi
     def staff_advance_input_details(self):
