@@ -198,7 +198,7 @@ class AdvanceRequest(models.Model):
                    ('Input Details', 'Review Details'),
                    ('Review Details', 'process'),
                    ('FC Approved', 'Rejected'),
-                   ('FC Approved', 'CFO Forward'),
+                   ('FC Approve', 'CFO Forward'),
                    ('CFO Approved', 'Rejected'),
                    ]
         return (old_state, new_state) in allowed
