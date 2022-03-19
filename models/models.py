@@ -228,7 +228,7 @@ class AdvanceRequest(models.Model):
 
     @api.multi
     def staff_advance_cfo_approve(self):
-        if self.amount_total > self._uid.partner_id.id.advance_limit:
+        if self.amount_total > self._uid.id.partner_id.id.advance_limit:
             msg = _('The Cash advance amount is above your approval limit')
             raise UserError(msg)
         else:
