@@ -184,6 +184,16 @@
             </form>
         </field>
     </record>
+      <record id="cash_advance_view_tree" model="ir.ui.view">
+          <field name="name">cash_advance_view_tree</field>
+          <field name="model">advance_request.ebs</field>
+          <field name="arch" type="xml">
+              <tree string="cash_advance_tree">
+                  <field name="request_no"/>
+                  <field name="state"/>
+              </tree>
+          </field>
+      </record>
 
 
 
