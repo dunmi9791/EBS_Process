@@ -234,11 +234,11 @@ class AdvanceRequest(models.Model):
             msg = _('The Cash advance amount is above your approval limit')
             raise UserError(msg)
         else:
-            self.change_state('CFO Approve')
+            self.change_state('CFOApprove')
 
     @api.multi
     def request_ceo_approval(self):
-        self.change_state('CFO Forward')
+        self.change_state('CFOForward')
 
     @api.multi
     def staff_advance_input_details(self):
@@ -250,7 +250,7 @@ class AdvanceRequest(models.Model):
 
     @api.multi
     def staff_advance_cfo_forward(self):
-        self.change_state('CFO Forward')
+        self.change_state('CFOForward')
 
     @api.multi
     def staff2_advance_reject(self):
