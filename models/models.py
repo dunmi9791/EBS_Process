@@ -150,8 +150,8 @@ class AdvanceRequest(models.Model):
     amount_total = fields.Monetary('Total Amount', compute='_amount_total', store=True)
     state = fields.Selection(string="",
                              selection=[('draft', 'draft'), ('Requested', 'Requested'), ('HOD Approve', 'HOD Approval'),
-                                        ('FC Approve', 'FC Approved'), ('CFO Approve', 'CFO Approved'),
-                                        ('CEO Approve', 'CEO Approved'), ('CFO Forward', 'CFO Forward'),
+                                        ('FC Approve', 'FC Approved'), ('CFOApprove', 'CFO Approved'),
+                                        ('CEO Approve', 'CEO Approved'), ('CFOForward', 'CFO Forward'),
                                         ('Input Details', 'Input Details'), ('Review Details', 'Review Details'),
                                         ('process', 'Processed'),
                                         ('Rejected', 'Rejected'), ], required=False, copy=False, default='draft',
@@ -190,16 +190,16 @@ class AdvanceRequest(models.Model):
                    ('Requested', 'HOD Approve'),
                    ('Requested', 'Rejected'),
                    ('HOD Approve', 'FC Approve'),
-                   ('FC Approve', 'CFO Approve'),
+                   ('FC Approve', 'CFOApprove'),
                    ('HOD Approve', 'Rejected'),
-                   ('CFO Approve', 'CEO Approve'),
-                   ('CEO Approve', 'CFO Forward'),
-                   ('CFO Forward', 'Input Details'),
+                   ('CFOApprove', 'CEO Approve'),
+                   ('CEO Approve', 'CFOForward'),
+                   ('CFOForward', 'Input Details'),
                    ('Input Details', 'Review Details'),
                    ('Review Details', 'process'),
                    ('FC Approved', 'Rejected'),
-                   ('FC Approve', 'CFO Forward'),
-                   ('CFO Approved', 'Rejected'),
+                   ('FC Approve', 'CFOForward'),
+                   ('CFOApproved', 'Rejected'),
                    ]
         return (old_state, new_state) in allowed
 
