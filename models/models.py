@@ -284,6 +284,14 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     advance_limit = fields.Monetary('Advance approval limit',)
+    company_id = fields.Many2one('res.company', string='', required=True, readonly=True,
+                                 default=lambda self: self.env.user.company_id)
+    currency_id = fields.Many2one('res.currency', compute='_compute_currency', store=True, string="Currency")
+
+    @api.one
+    @api.depends('company_id')
+    def _compute_currency(self):
+        self.currency_id = self.company_id.currency_id or self.env.user.company_id.currency_id
 
 # class ebs_process(models.Model):
 #     _name = 'ebs_process.ebs_process'
